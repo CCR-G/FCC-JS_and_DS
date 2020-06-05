@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Telephone Number validator project" />
+    <meta name="author" content="Camille Croquet" />
+
+    <title>Telephone Number Validator</title>
+
+    <!-- Bootstrap itself -->
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Icons -->
+    <link
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+    />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-push-2 text-center">
+            <h1>Telephone Number Validator</h1>
+
+            <h2>
+              from FreeCodeCamp
+            </h2>
+            <p class="lead">
+              Enter a telephone number to validate it
+            </p>
+            <p>
+              Removes any character other that digits and parentheses.
+            </p>
+
+            <br />
+
+            <form class="form" role="form">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control input-lg userInput text-center"
+                  id="userInput"
+                  placeholder="e.g.: '555-555-5555' or '1 (555) 555-5555'"
+                  name="userInput"
+                  required
+                />
+              </div>
+              <button type="submit" id="encrypt" class="btn btn-lg btn-default">
+                Validate
+              </button>
+            </form>
+            <br />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /Header -->
+
+    <!-- Content -->
+    <main class="content">
+      <!-- Lead -->
+      <section class="container space-before space-after">
+        <div class="row">
+          <div class="col-sm-10 col-sm-push-1">
+            <p class="text-center" id="resultExplanation">
+              The number<strong id="checkedNumber"></strong> is…
+            </p>
+            <p class="text-center h2" id="phoneNbValidatorResult">___</p>
+          </div>
+        </div>
+      </section>
+      <!-- /Lead -->
+
+      <section class="container space-after">
+        <div class="row">
+          <div class="col-sm-10 col-sm-push-1">
+            <div class="lead">
+              <blockquote class="blockquote">
+                <p><strong>The project</strong></p>
+                <p>
+                  Your job is to validate or reject the US phone number […]. The
+                  area code is required. If the country code is provided, you
+                  must confirm that the country code is 1. Return true if the
+                  string is a valid US phone number; otherwise return false.
+                </p>
+                <footer class="blockquote-footer">
+                  <cite title="Source Title"
+                    >"JavaScript Algorithms and Data Structures Projects" from
+                    <a
+                      target="_blank"
+                      href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/telephone-number-validator"
+                      >FreeCodeCamp.org</a
+                    ></cite
+                  >
+                </footer>
+              </blockquote>
+            </div>
+
+            <p class="">
+              I completed this challenge as a way to
+              <strong>practice and learn more about JavaScript</strong>. You can
+              find the source code on my Github account.
+              <br />
+              If you have any suggestion regarding accessibility, optimisation,
+              or anything, I would be extremely happy to hear about them on my
+              GitHub account. Don't hesitate to give me a hand so that I become
+              <strong>a better web developper</strong> !
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <p class="small text-muted text-center">
+      Check my portfolio on
+      <a target="_blank" href="https://www.camillecroquet.fr/"
+        >www.camillecroquet.fr</a
+      >
+    </p>
+
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="assets/js/telephone-number-validator.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="assets/js/template.js"></script>
+  </body>
+</html>
