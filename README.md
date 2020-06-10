@@ -15,7 +15,7 @@
   https://ccr-g.github.io/telephone-number-validator/telephone-number-validator.html
 
 ### Cash register checker
-My live solution
+  https://ccr-g.github.io/cash-register/cash-checker.html
 
 ## Personal projects
 
@@ -30,5 +30,5 @@ My live solution
 ## Contact information
 
 - Portfolio: www.camillecroquet.fr
-- GitHub: CCR-G
-- LinkedIn: Camille Croquet
+- GitHub: https://github.com/CCR-G
+- LinkedIn: https://www.linkedin.com/in/camille-croquet/
