@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cash register project" />
+    <meta name="author" content="Camille Croquet" />
+
+    <title>Cash register</title>
+
+    <!-- Bootstrap itself -->
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Icons -->
+    <link
+      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+    />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-push-2 text-center">
+            <h1>Cash register</h1>
+
+            <h2>
+              from FreeCodeCamp
+            </h2>
+
+            <form role="form">
+              <p class="lead">
+                Enter a purchase price and customer payment
+              </p>
+              <div class="form-row text-left m-5">
+                <div class="form-group col-md-6">
+                  <label for="purchase-price">Purchase price</label>
+                  <input
+                    type="number"
+                    class="form-control input-lg"
+                    id="purchase-price"
+                    placeholder="e.g.: 19.5"
+                    name="purchase-price"
+                    value="19.5"
+                    required
+                  />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="payment">Payment</label>
+                  <input
+                    type="number"
+                    class="form-control input-lg"
+                    id="payment"
+                    placeholder="e.g.: 20"
+                    name="purchase-price"
+                    value="20"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="divider"></div>
+
+              <p class="lead">
+                Enter the current cash in register
+              </p>
+
+              <div class="form-row">
+                <div class="form-row text-left">
+                  <div class="form-group col-md-4">
+                    <label for="penny">Penny</label>
+                    <input
+                      type="number"
+                      class="form-control input-lg cashInDrawer"
+                      id="penny"
+                      placeholder="e.g.: 0.01"
+                      name="penny"
+                      step="0.01"
+                      value="0.01"
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="nickel">Nickel</label>
+                    <input
+                      type="number"
+                      class="form-control input-lg cashInDrawer"
+                      id="nickel"
+                      placeholder="e.g.: 0.05"
+                      name="nickel"
+                      step="0.05"
+                      value="0.05"
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="dime">Dime</label>
+                    <input
+                      type="number"
+                      class="form-control input-lg cashInDrawer"
+                      id="dime"
+                      placeholder="e.g.: 0.10"
+                      name="dime"
+                      step="0.1"
+                      value="0.1"
+                    />
+                  </div>
+                </div>
+                <div class="form-row text-left">
+                  <div class="form-group col-md-4">
+                    <label for="quarter">Quarter</label>
+                    <input
+                      type="number"
+                      class="form-control input-lg cashInDrawer"
+                      id="quarter"
+                      placeholder="e.g.: 0.25"
+                      name="quarter"
+                      step="0.25"
+                      value="0.25"
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="One">One</label>
+                    <input
+                      type="number"
+                      class="form-control input-lg cashInDrawer"
+                      id="one"
+                      placeholder="e.g.: 1"
+                      name="one"
+                      step="1"
+                      value="1"
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="five">Five</label>
+                    <input
+                      type="number"
+                      class="form-control input-lg cashInDrawer"
+                      id="five"
+                      placeholder="e.g.: 5"
+                      name="five"
+                      step="5"
+                      value="5"
+                    />
+                  </div>
+                </div>
+                <div class="form-row text-left">
+                  <div class="form-group col-md-4">
+                    <label for="ten">Ten</label>
+                    <input
+                      type="number"
+                      class="form-control input-lg cashInDrawer"
+                      id="ten"
+                      placeholder="e.g.: 10"
+                      name="ten"
+                      step="10"
+                      value="10"
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="twenty">Twenty</label>
+                    <input
+                      type="number"
+                      class="form-control input-lg cashInDrawer"
+                      id="twenty"
+                      placeholder="e.g.: 20"
+                      name="twenty"
+                      step="20"
+                      value="20"
+                    />
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="one-hundred">One hundred</label>
+                    <input
+                      type="number"
+                      class="form-control input-lg cashInDrawer"
+                      id="one-hundred"
+                      placeholder="e.g.: 100"
+                      name="one-hundred"
+                      step="100"
+                      value="100"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row text-center">
+                <div class="form-group mt-5">
+                  <button
+                    type="submit"
+                    id="encrypt"
+                    class="btn btn-lg btn-default"
+                  >
+                    Validate
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <br />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /Header -->
+
+    <!-- Content -->
+    <main class="content">
+      <!-- Lead -->
+      <section class="container space-before space-after">
+        <div class="row" id="cidResult">
+          <div class="col-sm-10 col-sm-push-1">
+            <p class="text-center">
+              Cash register status:
+            </p>
+            <p class="text-center h2" id="cidStatus">___</p>
+          </div>
+        </div>
+      </section>
+      <!-- /Lead -->
+
+      <section class="container space-after">
+        <div class="row">
+          <div class="col-sm-10 col-sm-push-1">
+            <div class="lead">
+              <blockquote class="blockquote">
+                <p><strong>The project</strong></p>
+                <p>
+                  Design a cash register drawer function checkCashRegister()
+                  that accepts purchase price as the first argument (price),
+                  payment as the second argument (cash), and cash-in-drawer
+                  (cid) as the third argument. <br />
+                  The checkCashRegister() function should always return an
+                  object with a status key and a change key.
+                </p>
+                <footer class="blockquote-footer">
+                  <cite title="Source Title"
+                    >"JavaScript Algorithms and Data Structures Projects" from
+                    <a
+                      target="_blank"
+                      href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register"
+                      >FreeCodeCamp.org</a
+                    ></cite
+                  >
+                </footer>
+              </blockquote>
+            </div>
+
+            <p class="">
+              I completed this challenge as a way to
+              <strong>practice and learn more about JavaScript</strong>. You can
+              find the source code on my Github account.
+              <br />
+              If you have any suggestion regarding accessibility, optimisation,
+              or anything, I would be extremely happy to hear about them on my
+              GitHub account. Don't hesitate to give me a hand so that I become
+              <strong>a better web developper</strong> !
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <p class="small text-muted text-center">
+      Check my portfolio on
+      <a target="_blank" href="https://www.camillecroquet.fr/"
+        >www.camillecroquet.fr</a
+      >
+    </p>
+
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="assets/js/cash-register.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="assets/js/template.js"></script>
+  </body>
+</html>
