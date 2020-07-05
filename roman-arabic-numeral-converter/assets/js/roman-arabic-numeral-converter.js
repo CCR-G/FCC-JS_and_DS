@@ -1,6 +1,6 @@
 /*
---JavaScript Algorithms and Data Structures Projects: Roman Numeral Converter--
-Convert the given number into a roman numeral.
+--Roman and Arabic numeral converter--
+Convert the given number into either a roman or arabic numeral.
 */
 
 const arabicTable = [1, 5, 10, 50, 100, 500, 1000];
@@ -8,7 +8,7 @@ const romanTable = ["I", "V", "X", "L", "C", "D", "M"];
 const invalidInput = "not a valid input…";
 
 // Manages form and displays result
-var displayResult = document.getElementById("romanNumeralResult");
+var displayResult = document.getElementById("numeralResult");
 document.querySelector("form").addEventListener("submit", function (e) {
   const userInput = document.getElementById("userInput").value.toUpperCase();
   const romanLetters = new RegExp("[^" + romanTable.join("") + "]"); //Regex: /[^IVXLCDM]/
