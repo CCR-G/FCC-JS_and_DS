@@ -8,8 +8,8 @@
 ### Roman Numeral Converter
   https://ccr-g.github.io/roman-numbers/roman-numbers.html
   
-### Roman Numeral Converter
-  https://ccr-g.github.io/roman-numbers-both/roman-numbers-both.html
+### Roman and Arabic Numeral Converter
+  https://ccr-g.github.io/roman-arabic-numeral-converter/roman-arabic-numeral-converter.html
 
 ### Caesars Cipher
   https://ccr-g.github.io/caesars-cipher/rot13-cipher.html
