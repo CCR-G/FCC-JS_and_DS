@@ -9,7 +9,6 @@ var checkedNumber = document.getElementById("checkedNumber");
 
 document.querySelector("form").addEventListener("submit", function (e) {
   const userInput = document.getElementById("userInput").value;
-
   const phoneNumber = telephoneCheck(userInput);
   checkedNumber.innerHTML = "";
 

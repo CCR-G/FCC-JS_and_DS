@@ -58,7 +58,6 @@ function convertToRoman(arabicNumber) {
 //and return it.
 function switchDigit(arabicDigit, rDsExtract) {
   let romanDigit;
-
   if (arabicDigit >= 0 && arabicDigit <= 3) {
     // 0, 1, 2, 3
     romanDigit = rDsExtract[0].repeat(arabicDigit);

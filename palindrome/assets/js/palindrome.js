@@ -40,7 +40,7 @@ function palindrome(strString) {
   const rtsString = rtsArray.join(""); //We create a STRING containing the BACKWARD spelling of the string out of the BACKWARD ARRAY
 
   return {
-    isPalindrome: strString === rtsString ? true : false,
+    isPalindrome: strString === rtsString ? true : false, //Ternary condition returning true if the given string equals the BACKWARD STRING
     checkedString: strString,
-  }; //Ternary condition returning true if the given string equals the BACKWARD STRING
+  };
 }
