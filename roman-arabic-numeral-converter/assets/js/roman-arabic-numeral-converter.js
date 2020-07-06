@@ -5,16 +5,16 @@ Convert the given number into either a roman or arabic numeral.
 
 const arabicTable = [1, 5, 10, 50, 100, 500, 1000];
 const romanTable = ["I", "V", "X", "L", "C", "D", "M"];
+const romanLettersRegex = new RegExp("[^" + romanTable.join("") + "]"); //Regex: /[^IVXLCDM]/
 const invalidInput = "not a valid input…";
 
 // Manages form and displays result
-var displayResult = document.getElementById("numeralResult");
+var displayResult = document.getElementById("resultContainer");
 document.querySelector("form").addEventListener("submit", function (e) {
   const userInput = document.getElementById("userInput").value.toUpperCase();
-  const romanLetters = new RegExp("[^" + romanTable.join("") + "]"); //Regex: /[^IVXLCDM]/
-
+  
   //We use the right converter function depending on the input
-  if (userInput.search(romanLetters) == -1) {
+  if (userInput.search(romanLettersRegex) == -1) {
     displayResult.textContent = convertToArabic(userInput);
   } else if (
     userInput.search(/[^\d]/) == -1 &&
@@ -44,7 +44,7 @@ function convertToArabic(romanNumeral) {
     let tableIndex = romanTable.indexOf(romanFigures[i]);
     let currentFigure = arabicTable[tableIndex];
 
-    // Checking if the input is valid
+    // Checking if the input is invalid
     if (
       (currentFigure == lastFigure &&
         Number.isInteger(tableIndex / 2) == false) ||
@@ -53,13 +53,12 @@ function convertToArabic(romanNumeral) {
       (currentFigure < lastFigure && currentFigure <= beforeLastFigure) ||
       (currentFigure < lastFigure &&
         currentFigure * 5 != lastFigure &&
-        currentFigure * 10 != lastFigure) ||
-      arabicNumeral > 3999
+        currentFigure * 10 != lastFigure)      
     ) {
-      arabicNumeral = invalidInput;
+      return invalidInput;
     }
 
-    //Valid input
+    //When the input is valid
     else {
       if (currentFigure > lastFigure) {
         counterEqual = 0;
@@ -68,13 +67,16 @@ function convertToArabic(romanNumeral) {
         counterEqual++;
         arabicNumeral += currentFigure;
       } else {
-        counterEqual = 0;
         arabicNumeral -= currentFigure;
       }
 
       beforeLastFigure = lastFigure;
       lastFigure = currentFigure;
       i++;
+    }
+    
+    if (arabicNumeral > 3999) {
+      return invalidInput;
     }
   }
   return arabicNumeral;
