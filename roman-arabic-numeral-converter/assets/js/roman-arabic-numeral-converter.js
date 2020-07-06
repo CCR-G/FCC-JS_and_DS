@@ -29,6 +29,53 @@ document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
 });
 
+
+/**
+ * Converts an arabic numeral into a roman numeral.
+ * Each figure is converted starting from units and using a portion of the romanTable.
+ *
+ * @function convertToRoman
+ * @param {string} arabicNumeral - The arabic numeral to convert 
+ * @returns {string} An roman numeral
+ */
+function convertToRoman(arabicNumeral) {
+  const arabicFigures = arabicNumeral.split("").reverse();
+  let romanNumeral = ""; //Variable which will be rendered
+
+  arabicFigures.forEach(function (arabicFigure, i) {
+    
+    // Gets the right figures from romanTable using the current arabic figure's place in the number (unit, tens, hundred, thousand).
+    // ex: Units get ["I", "V", "X"], tens get ["X", "L", "C"]...
+    let romanTableExtract = romanTable.slice(i * 2, i * 2 + 3);
+    
+    let romanFigure;
+    if (arabicFigure >= 0 && arabicFigure <= 3) {
+      romanFigure = romanTableExtract[0].repeat(arabicFigure);
+    } else if (arabicFigure == 4) {
+      romanFigure = romanTableExtract[0] + romanTableExtract[1];
+    } else if (arabicFigure >= 5 && arabicFigure <= 8) {
+      romanFigure =
+        romanTableExtract[1] + romanTableExtract[0].repeat(arabicFigure - 5); // ex: V + II
+    } else {
+      romanFigure = romanTableExtract[0] + romanTableExtract[2]; //9
+    }
+
+    romanNumeral = romanFigure + romanNumeral;
+  });
+
+  return romanNumeral;
+}
+
+
+/**
+ * Convert a roman numeral into an arabic numeral by analysing each figure,
+ * and adding (ex: "XV" = 10 + 5) or substracting (ex: "IV" = 5 - 1) accordingly to the returned arabic numeral.
+ * Additionnaly, check if the roman numeral is invalid and return the invalid message in that case.
+ *
+ * @constructor
+ * @param {string} The roman numeral to convert
+ * @returns {number | string} An arabic numeral or the invalidInput string.
+ */
 // We want to go from unit to thousands
 // We check all conditions
 // We add or substract the currentFigure to the total arabicNumeral
@@ -44,7 +91,7 @@ function convertToArabic(romanNumeral) {
     let tableIndex = romanTable.indexOf(romanFigures[i]);
     let currentFigure = arabicTable[tableIndex];
 
-    // Checking if the input is invalid
+    // Checking if the romanNumeral input is invalid
     if (
       (currentFigure == lastFigure &&
         Number.isInteger(tableIndex / 2) == false) ||
@@ -80,31 +127,4 @@ function convertToArabic(romanNumeral) {
     }
   }
   return arabicNumeral;
-}
-
-//We want to go from unit to thousands
-//and render the right figure using the right portion of the romanTable
-function convertToRoman(arabicNumeral) {
-  const arabicFigures = arabicNumeral.split("").reverse();
-  let romanNumeral = ""; //Variable which will be rendered
-
-  arabicFigures.forEach(function (arabicFigure, i) {
-    let romanTableExtract = romanTable.slice(i * 2, i * 2 + 3); //3 elements of the roman table
-    let romanFigure;
-
-    if (arabicFigure >= 0 && arabicFigure <= 3) {
-      romanFigure = romanTableExtract[0].repeat(arabicFigure);
-    } else if (arabicFigure == 4) {
-      romanFigure = romanTableExtract[0] + romanTableExtract[1];
-    } else if (arabicFigure >= 5 && arabicFigure <= 8) {
-      romanFigure =
-        romanTableExtract[1] + romanTableExtract[0].repeat(arabicFigure - 5); //Moins lisible
-    } else {
-      romanFigure = romanTableExtract[0] + romanTableExtract[2]; //9
-    }
-
-    romanNumeral = romanFigure + romanNumeral;
-  });
-
-  return romanNumeral;
 }
