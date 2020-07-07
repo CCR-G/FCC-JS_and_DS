@@ -79,6 +79,7 @@ function convertToArabic(romanNumeral) {
   let arabicNumeral = 0;
 
   //Variables to compare
+  let currentFigure = 0;
   let lastFigure = 0;
   let beforeLastFigure = 0;
   let counterEqual = 0; //Used to count identical successive figures
@@ -86,9 +87,9 @@ function convertToArabic(romanNumeral) {
   let i = 0;
   while (i < romanFigures.length && arabicNumeral != invalidInput) {
     let tableIndex = romanTable.indexOf(romanFigures[i]);
-    let currentFigure = arabicTable[tableIndex];
+    currentFigure = arabicTable[tableIndex];
 
-    if (isInvalidRomanNum(currentFigure, lastFigure, beforeLastFigure)) {
+    if (isInvalidRomanNum(currentFigure, lastFigure, beforeLastFigure, tableIndex, counterEqual)) {
       return invalidInput;
     } else {
       if (currentFigure > lastFigure) {
@@ -123,7 +124,7 @@ function convertToArabic(romanNumeral) {
  * @param {number} beforeLastFigure - Before last checken arabic figure
  * @returns {boolean} True if invalid
  */
-function isInvalidRomanNum(currentFigure, lastFigure, beforeLastFigure) {
+function isInvalidRomanNum(currentFigure, lastFigure, beforeLastFigure, tableIndex, counterEqual) {
   if (
     (currentFigure == lastFigure && !Number.isInteger(tableIndex / 2)) ||
     (currentFigure == lastFigure && counterEqual >= 2) ||
