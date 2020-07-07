@@ -122,6 +122,8 @@ function convertToArabic(romanNumeral) {
  * @param {number} currentFigure - Currently checken arabic figure
  * @param {number} lastFigure - Last checken arabic figure
  * @param {number} beforeLastFigure - Before last checken arabic figure
+ * @param {number} tableIndex - The index of the current roman figure in romanTable
+ * @param {number} counterEqual - The identical successive figure counter
  * @returns {boolean} True if invalid
  */
 function isInvalidRomanNum(currentFigure, lastFigure, beforeLastFigure, tableIndex, counterEqual) {
