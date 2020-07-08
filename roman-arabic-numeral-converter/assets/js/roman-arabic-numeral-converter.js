@@ -89,7 +89,15 @@ function convertToArabic(romanNumeral) {
     let tableIndex = romanTable.indexOf(romanFigures[i]);
     currentFigure = arabicTable[tableIndex];
 
-    if (isInvalidRomanNum(currentFigure, lastFigure, beforeLastFigure, tableIndex, counterEqual)) {
+    if (
+      isInvalidRomanNumSequenc(
+        currentFigure,
+        lastFigure,
+        beforeLastFigure,
+        tableIndex,
+        counterEqual
+      )
+    ) {
       return invalidInput;
     } else {
       if (currentFigure > lastFigure) {
@@ -118,7 +126,7 @@ function convertToArabic(romanNumeral) {
  * Checks all cases by comparing the figures.
  * eg: VV, IIII, IIV, IVI, IVX, IC
  *
- * @function isInvalidRomanNum
+ * @function isInvalidRomanNumSequence
  * @param {number} currentFigure - Currently checken arabic figure
  * @param {number} lastFigure - Last checken arabic figure
  * @param {number} beforeLastFigure - Before last checken arabic figure
@@ -126,7 +134,13 @@ function convertToArabic(romanNumeral) {
  * @param {number} counterEqual - The identical successive figure counter
  * @returns {boolean} True if invalid
  */
-function isInvalidRomanNum(currentFigure, lastFigure, beforeLastFigure, tableIndex, counterEqual) {
+function isInvalidRomanNumSequence(
+  currentFigure,
+  lastFigure,
+  beforeLastFigure,
+  tableIndex,
+  counterEqual
+) {
   if (
     (currentFigure == lastFigure && !Number.isInteger(tableIndex / 2)) ||
     (currentFigure == lastFigure && counterEqual >= 2) ||
