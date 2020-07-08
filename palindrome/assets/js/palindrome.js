@@ -22,25 +22,23 @@ document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault(); // We don't send the input anywhere
 });
 
-function palindrome(strString) {
-  //Turns the given string to lowercase and removes all non-alphanumeric characters from it
-  strString = strString.toLowerCase().replace(/[^a-z0-9]/g, "");
+/**
+ * Checks if a given string is a palindrome.
+ * Deletes non alpha-numerical characters.
+ * Reverses the given string to compare it with the original.
+ *
+ * @function palindrome
+ * @param {string} myString - The string to be checken
+ * @returns {object} Returns two parameters : boolean isPalindrom and string checkedString
+ */
+function palindrome(myString) {
+  myString = myString.toLowerCase().replace(/[^a-z0-9]/g, "");
 
-  const rtsArray = []; //ARRAY which will receive the BACKWARD spelling of the given string
-  const strArray = strString.split(""); //ARRAY containing the FORWARD spelling of the given string
-  const strArrayLength = strArray.length; //We declare a constant so that poping letters out of the string will not change the length of the array
-  var strArrayLastChar; //Will receive the last character of the ARRAY containing the FORWARD spelling of the given string
-
-  for (let i = 0; i < strArrayLength; i++) {
-    //We pop out the last character of the FORWARD ARRAY and put it at the end of the BACKWARD ARRAY
-    strArrayLastChar = strArray.pop();
-    rtsArray.push(strArrayLastChar);
-  }
-  // rtsArray = strArray.reverse();
-  const rtsString = rtsArray.join(""); //We create a STRING containing the BACKWARD spelling of the string out of the BACKWARD ARRAY
+  let myStringReversedArray = myString.split("").reverse();
+  let myStringReversed = myStringReversedArray.join("");
 
   return {
-    isPalindrome: strString === rtsString ? true : false, //Ternary condition returning true if the given string equals the BACKWARD STRING
-    checkedString: strString,
+    isPalindrome: myString === myStringReversed ? true : false,
+    checkedString: myString,
   };
 }
