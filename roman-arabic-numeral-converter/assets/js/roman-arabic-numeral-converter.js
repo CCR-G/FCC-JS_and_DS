@@ -90,7 +90,7 @@ function convertToArabic(romanNumeral) {
     currentFigure = arabicTable[tableIndex];
 
     if (
-      isInvalidRomanNumSequenc(
+      isInvalidRomanNumSequence(
         currentFigure,
         lastFigure,
         beforeLastFigure,
