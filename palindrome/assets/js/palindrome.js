@@ -10,6 +10,7 @@ var displayResult = document.getElementById("palindromeResult");
 document.querySelector("form").addEventListener("submit", function (e) {
   const userInput = document.getElementById("userInput").value;
   const result = palindrome(userInput);
+
   submittedInput.innerHTML =
     'Input converted to "<strong>' + result.checkedString + '</strong>".';
 
@@ -24,8 +25,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
 /**
  * Checks if a given string is a palindrome.
- * Deletes non alpha-numerical characters.
- * Reverses the given string to compare it with the original.
+ * - Deletes non alpha-numerical characters using Regex
+ * - Reverses the given string to compare it with the original.
  *
  * @function palindrome
  * @param {string} myString - The string to be checken

@@ -11,14 +11,18 @@ document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault(); // We don't send the input anywhere
 });
 
+/**
+ * Encodes or decodes a string using ROT13 cipher
+ *
+ * @function rot13
+ * @param {string} userInput - The string to be encoded
+ * @returns {string} Returns an encoded or decoded string
+ */
 function rot13(userInput) {
-  let charArray = userInput.toUpperCase().split("");
+  let userInputArray = userInput.toUpperCase().split("");
   let decryptedInput = "";
 
-  charArray.forEach(function (inputChar) {
-    //For each character of the input,
-    //we check wether it is a letter or not,
-    //and add it to the decrypted input.
+  userInputArray.forEach(function (inputChar) {
     if (inputChar.search(/[^A-Z]/g) == -1) {
       let inputCharCode = inputChar.charCodeAt();
       let decryptedChar;
