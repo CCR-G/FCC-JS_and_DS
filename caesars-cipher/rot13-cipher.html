@@ -1,150 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="ROT13 Cipher project" />
-    <meta name="author" content="Camille Croquet" />
 
-    <title>ROT13 Cipher</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ROT13 Cipher project" />
+  <meta name="author" content="Camille Croquet" />
 
-    <!-- Bootstrap itself -->
-    <link
-      href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Icons -->
-    <link
-      href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
-      rel="stylesheet"
-    />
-    <!-- Fonts -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
-    />
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="../global-assets/css/styles.css" />
+  <title>ROT13 Cipher</title>
 
-    <!--[if lt IE 9]>
+  <!-- Bootstrap itself -->
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Icons -->
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="../global-assets/css/styles.css" />
+
+  <!--[if lt IE 9]>
       <script src="../global-assets/js/html5shiv.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-push-2 text-center">
-            <h1>ROT13 Cipher</h1>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-push-2 text-center">
+          <h1>ROT13 Cipher</h1>
 
-            <h2>
-              from FreeCodeCamp
-            </h2>
-            <p class="lead">
-              Enter a sentence to code or decode it using ROT13 cipher
-            </p>
-            <p>
-              Does not convert non-letter or accented characters. Converts to
-              uppercase.
-            </p>
+          <h2>
+            from FreeCodeCamp
+          </h2>
+          <p class="lead">
+            Enter a sentence to code or decode it using ROT13 cipher
+          </p>
+          <p>
+            Does not convert non-letter or accented characters. Converts to
+            uppercase.
+          </p>
 
-            <br />
+          <br />
 
-            <form class="form" role="form">
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control input-lg userInput text-center"
-                  id="userInput"
-                  placeholder="e.g.: 'SERR PBQR PNZC', 'THE QUICK BROWN FOX', etc…"
-                  name="userInput"
-                  required
-                />
-              </div>
-              <button type="submit" id="encrypt" class="btn btn-lg btn-default">
-                ROT13
-              </button>
-            </form>
-            <br />
-          </div>
+          <form class="form" role="form">
+            <div class="form-group">
+              <input type="text" class="form-control input-lg userInput text-center" id="userInput"
+                placeholder="e.g.: 'SERR PBQR PNZC', 'THE QUICK BROWN FOX', etc…" name="userInput" required />
+            </div>
+            <button type="submit" id="encrypt" class="btn btn-lg btn-default">
+              ROT13
+            </button>
+          </form>
+          <br />
         </div>
       </div>
-    </header>
-    <!-- /Header -->
+    </div>
+  </header>
+  <!-- /Header -->
 
-    <!-- Content -->
-    <main class="content">
-      <!-- Lead -->
-      <section class="container space-before space-after">
-        <div class="row">
-          <div class="col-sm-10 col-sm-push-1">
-            <p class="text-center" id="resultExplanation">
-              Your ROT13 result is…
-            </p>
-            <p class="text-center h2" id="rot13CipherResult">___</p>
-          </div>
+  <!-- Content -->
+  <main class="content">
+    <!-- Lead -->
+    <section class="container space-before space-after">
+      <div class="row">
+        <div class="col-sm-10 col-sm-push-1">
+          <p class="text-center" id="resultExplanation">
+            Your ROT13 result is…
+          </p>
+          <p class="text-center h2" id="rot13CipherResult">___</p>
         </div>
-      </section>
-      <!-- /Lead -->
+      </div>
+    </section>
+    <!-- /Lead -->
 
-      <section class="container space-after">
-        <div class="row">
-          <div class="col-sm-10 col-sm-push-1">
-            <div class="lead">
-              <blockquote class="blockquote">
-                <p><strong>The project</strong></p>
-                <p>
-                  "Write a function which takes a ROT13 encoded string as input
-                  and returns a decoded string. <br />
-                  All letters will be uppercase. Do not transform any
-                  non-alphabetic character (i.e. spaces, punctuation), but do
-                  pass them on."
-                </p>
-                <footer class="blockquote-footer">
-                  <cite title="Source Title"
-                    >"JavaScript Algorithms and Data Structures Projects" from
-                    <a
-                      target="_blank"
-                      href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/rot13-cipher"
-                      >FreeCodeCamp.org</a
-                    ></cite
-                  >
-                </footer>
-              </blockquote>
-            </div>
-
-            <p class="">
-              I completed this challenge as a way to
-              <strong>practice and learn more about JavaScript</strong>. You can
-              find
-              <a
-                href="https://github.com/CCR-G/CCR-G.github.io/tree/master/telephone-number-validator"
-                >the source code on my Github account</a
-              >.
-              <br />
-              If you have any suggestion regarding accessibility, optimisation,
-              or anything, I would be extremely happy to hear about them on my
-              GitHub account. Don't hesitate to give me a hand so that I become
-              <strong>a better web developper</strong> !
-            </p>
+    <section class="container space-after">
+      <div class="row">
+        <div class="col-sm-10 col-sm-push-1">
+          <div class="lead">
+            <blockquote class="blockquote">
+              <p><strong>The project</strong></p>
+              <p>
+                "Write a function which takes a ROT13 encoded string as input
+                and returns a decoded string. <br />
+                All letters will be uppercase. Do not transform any
+                non-alphabetic character (i.e. spaces, punctuation), but do
+                pass them on."
+              </p>
+              <footer class="blockquote-footer">
+                <cite title="Source Title">"JavaScript Algorithms and Data Structures Projects" from
+                  <a target="_blank"
+                    href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/rot13-cipher">FreeCodeCamp.org</a></cite>
+              </footer>
+            </blockquote>
           </div>
+
+          <p class="">
+            I completed this challenge as a way to
+            <strong>practice and learn more about JavaScript</strong>. You can
+            find
+            <a href="https://github.com/CCR-G/FCC-JS_and_DS/tree/master/telephone-number-validator">the source code on
+              my Github account</a>.
+            <br />
+            If you have any suggestion regarding accessibility, optimisation,
+            or anything, I would be extremely happy to hear about them on my
+            GitHub account. Don't hesitate to give me a hand so that I become
+            <strong>a better web developper</strong> !
+          </p>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <p class="small text-muted text-center">
-      Check my portfolio on
-      <a target="_blank" href="https://www.camillecroquet.fr/"
-        >www.camillecroquet.fr</a
-      >
-    </p>
+  <p class="small text-muted text-center">
+    Check my portfolio on
+    <a target="_blank" href="https://www.camillecroquet.fr/">www.camillecroquet.fr</a>
+  </p>
 
-    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-    <script src="assets/js/rot13-cipher.js"></script>
+  <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+  <script src="rot13-cipher.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</body>
+
 </html>
